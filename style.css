@@ -27,6 +27,7 @@ h1 {
   font-size: 3rem;
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 h2 {
@@ -41,20 +42,20 @@ h3 {
   margin-top: 0.8rem;
 }
 
-/* --- NAVIGATION --- */
+/* --- LIENS ET NAVIGATION --- */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
   justify-content: center;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 nav a {
+  position: relative;
   text-decoration: none;
   color: #bfbfbf;
   font-weight: bold;
-  position: relative;
   overflow: hidden;
 }
 
@@ -66,17 +67,18 @@ nav a::after {
   width: 100%;
   height: 2px;
   background: #4b3a4e;
-  transform: translateX(-100%);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
 }
 
 nav a:hover {
   color: #ffffff;
   text-shadow: 0 0 8px #4b3a4e;
-}
-
-nav a:hover::after {
-  transform: translateX(0);
 }
 
 /* --- BOUTONS --- */
@@ -89,8 +91,8 @@ nav a:hover::after {
   box-shadow: 0 0 10px #2c3e50;
   display: inline-block;
   margin-top: 1rem;
-  text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -98,11 +100,12 @@ nav a:hover::after {
   box-shadow: 0 0 25px #2c3e50;
 }
 
-/* --- BIJOUX & GALERIE --- */
+/* --- GALERIE BIJOUX --- */
 .galerie {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .bijou {
@@ -117,6 +120,11 @@ nav a:hover::after {
   position: relative;
 }
 
+.bijou:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #2c3e50;
+}
+
 .bijou img {
   width: 100%;
   border-radius: 8px;
@@ -125,104 +133,9 @@ nav a:hover::after {
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.bijou:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px #2c3e50;
-}
-
 .bijou:hover img {
   transform: scale(1.05);
   filter: drop-shadow(0 0 10px #4b3a4e);
-}
-
-/* --- BULLES DE TEXTE --- */
-.bulle {
-  font-style: italic;
-  color: #ad8762;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  position: relative;
-  padding-left: 15px;
-}
-
-.bulle::before {
-  content: "❝";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #ad8762;
-  font-size: 1.2rem;
-}
-
-/* --- PHRASES DE CATÉGORIE --- */
-.categorie-phrase {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: #bfbfbf;
-  margin-bottom: 1rem;
-  font-style: italic;
-  border-left: 4px solid #4b3a4e;
-  padding-left: 10px;
-}
-
-/* --- SECTIONS --- */
-section {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.definition {
-  border: 2px solid #444;
-  padding: 1.2rem;
-  border-radius: 12px;
-  background-color: #1a1a1a;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 0 12px rgba(255,255,255,0.05);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* --- TEXTE DEFINITION --- */
-.definition h2 {
-  font-size: 2.2rem;
-  font-family: 'Georgia', serif;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.definition p {
-  color: #ccc;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* --- CONTENU DU MANIFESTE --- */
-main.manifeste {
-  max-width: 700px;
-  margin: 2rem auto 4rem auto;
-  padding: 0 1rem;
-  color: #d4d4d4;
-  font-style: italic;
-  line-height: 1.8;
-}
-
-main.manifeste p {
-  margin-bottom: 1.5rem;
-}
-
-main.manifeste .signature {
-  font-weight: 900;
-  font-size: 1.4rem;
-  text-align: right;
-  color: #ad8762;
-  margin-top: 3rem;
-  font-style: normal;
 }
 
 /* --- FOOTER --- */
@@ -233,6 +146,51 @@ footer {
   border-top: 1px solid #4b3a4e33;
   color: #bfbfbf;
   font-size: 0.9rem;
+}
+
+/* --- SECTION MANIFESTE & DÉFINITION --- */
+.manifeste, .definition {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: #eee;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.definition {
+  border: 2px solid #444;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 12px rgba(255,255,255,0.05);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.definition h2 {
+  font-size: 2.2rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.definition p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+/* --- SIGNATURE --- */
+.signature {
+  margin-top: 2rem;
+  text-align: right;
+  font-weight: bold;
+  color: #FFD700;
+  font-style: normal;
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- RESPONSIVE --- */
