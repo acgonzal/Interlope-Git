@@ -205,3 +205,52 @@ footer {
     gap: 1rem;
   }
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav .dropdown-content,
+nav .dropdown-content-sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a002f; /* violet foncé ou autre selon ta DA */
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+nav .dropdown-content-sub {
+  left: 100%;
+  top: 0;
+}
+
+nav .dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+nav .dropdown-sub:hover > .dropdown-content-sub {
+  display: block;
+}
+
+nav li a:hover {
+  color: #ffc8ff; /* une teinte douce de ta palette violette */
+}
