@@ -41,11 +41,12 @@ h3 {
   margin-top: 0.8rem;
 }
 
-/* --- LIENS ET NAVIGATION --- */
+/* --- NAVIGATION --- */
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
   margin-bottom: 2rem;
 }
 
@@ -53,12 +54,29 @@ nav a {
   text-decoration: none;
   color: #bfbfbf;
   font-weight: bold;
-  transition: color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #4b3a4e;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
 nav a:hover {
   color: #ffffff;
   text-shadow: 0 0 8px #4b3a4e;
+}
+
+nav a:hover::after {
+  transform: translateX(0);
 }
 
 /* --- BOUTONS --- */
@@ -71,16 +89,16 @@ nav a:hover {
   box-shadow: 0 0 10px #2c3e50;
   display: inline-block;
   margin-top: 1rem;
-  transition: transform 0.3s ease;
   text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 18px #4b3a4e;
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 0 25px #2c3e50;
 }
 
-/* --- GALERIE BIJOUX --- */
+/* --- BIJOUX & GALERIE --- */
 .galerie {
   display: flex;
   gap: 1.5rem;
@@ -99,17 +117,17 @@ nav a:hover {
   position: relative;
 }
 
-.bijou:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px #2c3e50;
-}
-
 .bijou img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 0.7rem;
   filter: drop-shadow(0 0 5px #4b3a4e);
   transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.bijou:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #2c3e50;
 }
 
 .bijou:hover img {
@@ -147,33 +165,44 @@ nav a:hover {
   padding-left: 10px;
 }
 
-/* --- INTRODUCTION --- */
-.intro {
-  text-align: center;
-  margin-bottom: 3rem;
+/* --- SECTIONS --- */
+section {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.intro h2 {
-  font-size: 2.5rem;
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.definition {
+  border: 2px solid #444;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 12px rgba(255,255,255,0.05);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- TEXTE DEFINITION --- */
+.definition h2 {
+  font-size: 2.2rem;
+  font-family: 'Georgia', serif;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
-.intro p {
-  font-size: 1.2rem;
-  color: #bfbfbf;
+.definition p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* --- FOOTER --- */
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 1rem 0;
-  border-top: 1px solid #4b3a4e33;
-  color: #bfbfbf;
-  font-size: 0.9rem;
-}
-
-/* --- PAGE MANIFESTE --- */
+/* --- CONTENU DU MANIFESTE --- */
 main.manifeste {
   max-width: 700px;
   margin: 2rem auto 4rem auto;
@@ -196,6 +225,16 @@ main.manifeste .signature {
   font-style: normal;
 }
 
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  border-top: 1px solid #4b3a4e33;
+  color: #bfbfbf;
+  font-size: 0.9rem;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 650px) {
   .galerie {
@@ -208,62 +247,3 @@ main.manifeste .signature {
     gap: 1rem;
   }
 }
-
-/* --- ANIMATION DOUCE AU HOVER DES BOUTONS --- */
-.btn {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn:hover {
-  transform: scale(1.1) rotate(-2deg);
-  box-shadow: 0 0 25px #2c3e50;
-}
-
-/* --- SOULIGNEMENT ANIMÉ SUR LES TITRES DE NAV --- */
-nav a {
-  position: relative;
-  overflow: hidden;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background: #4b3a4e;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-}
-
-nav a:hover::after {
-  transform: translateX(0);
-}
-
-/* --- FADE IN DOUX POUR LES SECTIONS --- */
-section {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-section:nth-child(2) { animation-delay: 0.4s; }
-section:nth-child(3) { animation-delay: 0.5s; }
-section:nth-child(4) { animation-delay: 0.6s; }
-section:nth-child(5) { animation-delay: 0.7s; }
-
-.definition {
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
