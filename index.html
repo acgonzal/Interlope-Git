@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interlope</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+<body>
+  <header>
+    <h1>INTERLOPE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="creations.html">Créations</a></li>
+        <li><a href="manifeste.html">Manifeste</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Bijoux faits main, sombres et lumineux.</h2>
+      <p>Des créations interlopes pour celles et ceux qui brillent dans l’ombre.</p>
+      <a href="creations.html" class="btn">Découvrir les créations</a>
+    </section>
+
+    <section class="categorie">
+      <h2>Colliers</h2>
+      <p class="categorie-phrase">"Pour enchaîner sans jamais se soumettre."</p>
+      <div class="galerie">
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Collier Trouble">
+          <h3>Le Collier Trouble</h3>
+          <p class="bulle">"Brille dans l’ombre, fais comme si."</p>
+        </div>
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Éclat Suspect">
+          <h3>L’Éclat Suspect</h3>
+          <p class="bulle">"On te regarde, mais on ne te retient pas."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categorie">
+      <h2>Bracelets</h2>
+      <p class="categorie-phrase">"On dit que je suis attachante. Pas docile."</p>
+      <div class="galerie">
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Lien Louche">
+          <h3>Le Lien Louche</h3>
+          <p class="bulle">"Attachée, mais libre."</p>
+        </div>
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Manchette Compromettante">
+          <h3>La Manchette Compromettante</h3>
+          <p class="bulle">"Tu ne portes pas un bijou, tu portes un secret."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categorie">
+      <h2>Boucles d’oreilles</h2>
+      <p class="categorie-phrase">"Tu ne l’as pas entendue venir, mais elle te hante encore."</p>
+      <div class="galerie">
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Boucle Douteuse">
+          <h3>La Boucle Douteuse</h3>
+          <p class="bulle">"C’est pas toi, c’est moi."</p>
+        </div>
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Pendantes Dissidentes">
+          <h3>Les Pendantes Dissidentes</h3>
+          <p class="bulle">"Elles se balancent entre vérité et provocation."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categorie">
+      <h2>Autres curiosités</h2>
+      <p class="categorie-phrase">"Entre les lignes, entre les genres, entre les lois."</p>
+      <div class="galerie">
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Aiguille Discrète">
+          <h3>L’Aiguille Discrète</h3>
+          <p class="bulle">"Presque invisible. Sauf quand elle pique."</p>
+        </div>
+        <div class="bijou">
+          <img src="placeholder.jpg" alt="Broche Interdite">
+          <h3>La Broche Interdite</h3>
+          <p class="bulle">"Elle ne tient rien. Sauf ta réputation."</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Interlope - Tous droits réservés</p>
+  </footer>
+</body>
+</html>
