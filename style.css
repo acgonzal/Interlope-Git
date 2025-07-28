@@ -3,24 +3,24 @@
   margin: 0; padding: 0;
   box-sizing: border-box;
   font-family: 'Georgia', serif;
-  color: #eee;
+  color: #f2f2f2;
 }
 
 body {
-  background: #121212;
+  background: #0f0f0f;
   line-height: 1.6;
   min-height: 100vh;
   padding: 1rem;
   background-image:
-    radial-gradient(circle at top left, rgba(255,215,0,0.05), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(255,215,0,0.07), transparent 70%);
+    radial-gradient(circle at top left, rgba(76, 0, 130, 0.07), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(70, 130, 180, 0.07), transparent 70%);
 }
 
 /* --- TYPOGRAPHIE --- */
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
-  color: gold;
-  text-shadow: 0 0 6px #bfa52f;
+  color: #ad8762;
+  text-shadow: 0 0 6px #2c3e50;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h1 {
 h2 {
   font-size: 2rem;
   margin: 2rem 0 1rem 0;
-  border-bottom: 2px solid #bfa52f;
+  border-bottom: 2px solid #4b3a4e;
   padding-bottom: 0.5rem;
 }
 
@@ -51,24 +51,24 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #d4af37;
+  color: #bfbfbf;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px gold;
+  color: #ffffff;
+  text-shadow: 0 0 8px #4b3a4e;
 }
 
 /* --- BOUTONS --- */
 .btn {
-  background: linear-gradient(45deg, #bfa52f, #ffd700);
+  background: linear-gradient(45deg, #4b3a4e, #2c3e50);
   padding: 0.7rem 1.2rem;
   border-radius: 30px;
-  color: #121212;
+  color: #f2f2f2;
   font-weight: bold;
-  box-shadow: 0 0 10px #bfa52f;
+  box-shadow: 0 0 10px #2c3e50;
   display: inline-block;
   margin-top: 1rem;
   transition: transform 0.3s ease;
@@ -77,7 +77,7 @@ nav a:hover {
 
 .btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 18px #ffd700;
+  box-shadow: 0 0 18px #4b3a4e;
 }
 
 /* --- GALERIE BIJOUX --- */
@@ -88,12 +88,12 @@ nav a:hover {
 }
 
 .bijou {
-  background: #222;
-  border: 2px solid #bfa52f;
+  background: #1a1a1a;
+  border: 2px solid #4b3a4e;
   border-radius: 12px;
   padding: 1rem;
   width: 220px;
-  box-shadow: 0 0 12px rgba(191,165,47,0.6);
+  box-shadow: 0 0 12px rgba(76,0,130,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -101,20 +101,26 @@ nav a:hover {
 
 .bijou:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 20px #2c3e50;
 }
 
 .bijou img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 0.7rem;
-  filter: drop-shadow(0 0 5px #bfa52f);
+  filter: drop-shadow(0 0 5px #4b3a4e);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.bijou:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px #4b3a4e);
 }
 
 /* --- BULLES DE TEXTE --- */
 .bulle {
   font-style: italic;
-  color: #ffd700cc;
+  color: #ad8762;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   position: relative;
@@ -126,7 +132,7 @@ nav a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  color: gold;
+  color: #ad8762;
   font-size: 1.2rem;
 }
 
@@ -134,10 +140,10 @@ nav a:hover {
 .categorie-phrase {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
-  color: #d4af37dd;
+  color: #bfbfbf;
   margin-bottom: 1rem;
   font-style: italic;
-  border-left: 4px solid #d4af37dd;
+  border-left: 4px solid #4b3a4e;
   padding-left: 10px;
 }
 
@@ -154,7 +160,7 @@ nav a:hover {
 
 .intro p {
   font-size: 1.2rem;
-  color: #c0a72fcc;
+  color: #bfbfbf;
 }
 
 /* --- FOOTER --- */
@@ -162,8 +168,8 @@ footer {
   text-align: center;
   margin-top: 3rem;
   padding: 1rem 0;
-  border-top: 1px solid #bfa52f33;
-  color: #bfa52f99;
+  border-top: 1px solid #4b3a4e33;
+  color: #bfbfbf;
   font-size: 0.9rem;
 }
 
@@ -172,7 +178,7 @@ main.manifeste {
   max-width: 700px;
   margin: 2rem auto 4rem auto;
   padding: 0 1rem;
-  color: #f0e68c;
+  color: #d4d4d4;
   font-style: italic;
   line-height: 1.8;
 }
@@ -185,7 +191,7 @@ main.manifeste .signature {
   font-weight: 900;
   font-size: 1.4rem;
   text-align: right;
-  color: gold;
+  color: #ad8762;
   margin-top: 3rem;
   font-style: normal;
 }
@@ -203,7 +209,6 @@ main.manifeste .signature {
   }
 }
 
-
 /* --- ANIMATION DOUCE AU HOVER DES BOUTONS --- */
 .btn {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -211,17 +216,7 @@ main.manifeste .signature {
 
 .btn:hover {
   transform: scale(1.1) rotate(-2deg);
-  box-shadow: 0 0 25px #ffd700cc;
-}
-
-/* --- LÉGER ZOOM + OMBRE SUR LES IMAGES DES BIJOUX --- */
-.bijou img {
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.bijou:hover img {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 10px #ffd700aa);
+  box-shadow: 0 0 25px #2c3e50;
 }
 
 /* --- SOULIGNEMENT ANIMÉ SUR LES TITRES DE NAV --- */
@@ -237,7 +232,7 @@ nav a::after {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background: gold;
+  background: #4b3a4e;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
