@@ -12,11 +12,30 @@
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="creations.html">Créations</a></li>
+        <li class="dropdown">
+          <a href="creations.html">Créations</a>
+          <ul class="dropdown-content">
+            <li><a href="creations.html#bracelets">Bracelets</a></li>
+            <li><a href="creations.html#colliers">Colliers</a></li>
+            <li><a href="creations.html#pendentifs">Pendentifs</a></li>
+            <li><a href="creations.html#boucles">Boucles d’oreilles</a></li>
+            <li class="dropdown-sub">
+              <a href="#">Pièces vintage</a>
+              <ul class="dropdown-content-sub">
+                <li><a href="creations.html#vintage-bracelets">Bracelets</a></li>
+                <li><a href="creations.html#vintage-boucles">Boucles</a></li>
+                <li><a href="creations.html#vintage-pendentifs">Pendentifs</a></li>
+                <li><a href="creations.html#vintage-bagues">Bagues</a></li>
+                <li><a href="creations.html#vintage-broches">Broches</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="manifeste.html">Manifeste</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+
   </header>
 
   <main>
@@ -27,58 +46,7 @@
       <p>Dont l'activité n'est pas légale.</p>
     </section>
 
-    <!-- Créations -->
-    <section class="creations">
-      <h2>Créations</h2>
-
-      <section id="bracelets">
-        <h3>Bracelets</h3>
-        <!-- Galerie d'images -->
-      </section>
-
-      <section id="colliers">
-        <h3>Colliers</h3>
-        <!-- Galerie d'images -->
-      </section>
-
-      <section id="pendentifs">
-        <h3>Pendentifs</h3>
-        <!-- Galerie d'images -->
-      </section>
-
-      <section id="boucles">
-        <h3>Boucles d’oreilles</h3>
-        <!-- Galerie d'images -->
-      </section>
-
-      <section id="vintage">
-        <h3>Pièces vintage</h3>
-
-        <div class="sous-categories">
-          <section id="vintage-bracelets">
-            <h4>Bracelets</h4>
-            <!-- Galerie d'images -->
-          </section>
-          <section id="vintage-boucles">
-            <h4>Boucles d’oreilles</h4>
-            <!-- Galerie d'images -->
-          </section>
-          <section id="vintage-pendentifs">
-            <h4>Pendentifs</h4>
-            <!-- Galerie d'images -->
-          </section>
-          <section id="vintage-bagues">
-            <h4>Bagues</h4>
-            <!-- Galerie d'images -->
-          </section>
-          <section id="vintage-broches">
-            <h4>Broches</h4>
-            <!-- Galerie d'images -->
-          </section>
-        </div>
-      </section>
-    </section>
-
+   
     <!-- Galerie générale -->
     <section class="galerie">
       <div class="bijou">
@@ -93,22 +61,6 @@
       <!-- Ajoute d'autres bijoux ici -->
     </section>
 
-    <!-- Contact -->
-    <section class="contact">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/{votre-clé}" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn">Envoyer</button>
-      </form>
-    </section>
   </main>
 
   <footer>
