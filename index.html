@@ -19,16 +19,68 @@
     </nav>
   </header>
 
-  <main class="manifeste">
+  <main>
+    <!-- Définition Interlope -->
     <section class="definition visible">
       <h2>Interlope</h2>
-      <p><em>adjectif <strong> féminin, masculin</strong></em></p>
-      <p>Dont l'activité n'est pas légale. </p>
+      <p><em>adjectif <strong>féminin, masculin</strong></em></p>
+      <p>Dont l'activité n'est pas légale.</p>
     </section>
 
-    
+    <!-- Créations -->
+    <section class="creations">
+      <h2>Créations</h2>
+
+      <section id="bracelets">
+        <h3>Bracelets</h3>
+        <!-- Galerie d'images -->
+      </section>
+
+      <section id="colliers">
+        <h3>Colliers</h3>
+        <!-- Galerie d'images -->
+      </section>
+
+      <section id="pendentifs">
+        <h3>Pendentifs</h3>
+        <!-- Galerie d'images -->
+      </section>
+
+      <section id="boucles">
+        <h3>Boucles d’oreilles</h3>
+        <!-- Galerie d'images -->
+      </section>
+
+      <section id="vintage">
+        <h3>Pièces vintage</h3>
+
+        <div class="sous-categories">
+          <section id="vintage-bracelets">
+            <h4>Bracelets</h4>
+            <!-- Galerie d'images -->
+          </section>
+          <section id="vintage-boucles">
+            <h4>Boucles d’oreilles</h4>
+            <!-- Galerie d'images -->
+          </section>
+          <section id="vintage-pendentifs">
+            <h4>Pendentifs</h4>
+            <!-- Galerie d'images -->
+          </section>
+          <section id="vintage-bagues">
+            <h4>Bagues</h4>
+            <!-- Galerie d'images -->
+          </section>
+          <section id="vintage-broches">
+            <h4>Broches</h4>
+            <!-- Galerie d'images -->
+          </section>
+        </div>
+      </section>
+    </section>
+
+    <!-- Galerie générale -->
     <section class="galerie">
-      <!-- Exemple d'article -->
       <div class="bijou">
         <img src="img/bijou1.jpg" alt="Bijou 1">
         <p class="bulle">Un éclat de nuit.</p>
@@ -38,12 +90,25 @@
         <img src="img/bijou2.jpg" alt="Bijou 2">
         <p class="bulle">Le trouble incarné.</p>
       </div>
-
       <!-- Ajoute d'autres bijoux ici -->
     </section>
-  
 
-    
+    <!-- Contact -->
+    <section class="contact">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/{votre-clé}" method="POST">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </section>
   </main>
 
   <footer>
