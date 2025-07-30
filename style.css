@@ -69,11 +69,10 @@ nav a:hover {
 }
 
 /* Menu déroulant */
-.dropdown-content,
-.dropdown-sub-content {
+.submenu, .dropdown-content, .dropdown-sub-content {
   display: none;
   position: absolute;
-  background-color: #111; /* foncé, dans ta DA */
+  background-color: #111;
   z-index: 100;
   top: 100%;
   left: 0;
@@ -83,6 +82,7 @@ nav a:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+.dropdown:hover .submenu,
 .dropdown:hover > .dropdown-content {
   display: block;
 }
@@ -93,7 +93,7 @@ nav a:hover {
   top: 0;
 }
 
-/* --- TITRES SECTIONS (Contact, Manifeste, Produits...) --- */
+/* --- TITRES SECTIONS --- */
 .titre-section {
   font-family: 'Georgia', serif;
   font-style: italic;
@@ -153,14 +153,14 @@ nav a:hover {
   background-color: #a279d1;
 }
 
-/* --- DÉFINITION / MANIFESTE (Style épuré, lecture facile) --- */
+/* --- DÉFINITION --- */
 .definition {
   margin: 40px auto 60px auto;
   padding: 20px;
   max-width: 700px;
-  background-color: #111; /* fond très foncé */
+  background-color: #111;
   color: white;
-  border-left: 5px solid #a279d1; /* violet clair */
+  border-left: 5px solid #a279d1;
   font-family: 'Georgia', serif;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
@@ -183,6 +183,32 @@ nav a:hover {
 .definition p {
   font-size: 1em;
   line-height: 1.5em;
+}
+
+/* --- MANIFESTE --- */
+.manifesto {
+  margin: 40px auto 60px auto;
+  padding: 20px;
+  max-width: 700px;
+  background-color: #222;
+  color: #e3d0ff;
+  border-left: 5px solid #a279d1;
+  font-family: 'Cinzel', serif;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.manifesto p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+
+.signature {
+  font-style: normal;
+  font-weight: bold;
+  color: #FFD700;
+  text-align: right;
 }
 
 /* --- GALERIE BIJOUX --- */
