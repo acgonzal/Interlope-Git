@@ -8,10 +8,9 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo-container">
-      <img src="logo.png" alt="Interlope Logo" class="logo">
+      <img src="logo.png" alt="Interlope" class="logo">
     </div>
     <nav>
       <ul>
@@ -22,14 +21,28 @@
     </nav>
   </header>
 
-  <!-- CARROUSEL -->
-  <section class="carousel">
-    <div class="carousel-track">
-      <img src="image1.png" alt="Image 1">
-      <img src="image2.png" alt="Image 2">
-      
-    </div>
-  </section>
+  <main id="produits">
+    <section class="carousel">
+      <div class="carousel-track">
+        <div class="slide"><img src="image1.png" alt="Bijou 1"></div>
+        <div class="slide"><img src="image2.png" alt="Bijou 2"></div>
+        <!-- Ajouter d'autres slides si nécessaire -->
+      </div>
+      <button class="carousel-button prev">&#10094;</button>
+      <button class="carousel-button next">&#10095;</button>
+    </section>
 
+    <section id="apropos" class="apropos">
+      <h2>À propos d’Interlope</h2>
+      <p>Chaque pièce Interlope est pensée comme une œuvre, mariant l’élégance des années 70 à un savoir-faire contemporain. Nos bijoux racontent des histoires et illuminent ceux qui les portent.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>© 2025 Interlope – Tous droits réservés</p>
+    <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+  </footer>
+
+  <script src="carousel.js"></script>
 </body>
 </html>
