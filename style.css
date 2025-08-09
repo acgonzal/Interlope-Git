@@ -1,0 +1,77 @@
+/* RESET SIMPLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FOND EN DÉGRADÉ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fefefe;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #ff5a00, #ffb300);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo-container {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* NAVIGATION */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* CARROUSEL */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+.carousel img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
