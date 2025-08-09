@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 900 220" width="900" height="220" role="img" aria-label="Interlope logo">
+  <defs>
+    <!-- Import Google Font (fonctionne bien si SVG est inline dans HTML;
+         certains navigateurs peuvent ignorer l'import pour fichiers SVG autonomes —
+         si besoin, tu peux convertir le texte en paths) -->
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+      .logo-text { font-family: 'Playfair Display', serif; font-weight:700; font-size:140px; fill:#121212; }
+      .wave { fill: none; stroke:#121212; stroke-width:44; stroke-linecap:round; stroke-linejoin:round; }
+    ]]></style>
+  </defs>
+
+  <!-- Texte principal (retrofied) -->
+  <text class="logo-text" x="20" y="150">Interlope</text>
+
+  <!-- Décor wave placé pour simuler la queue ondulée (ajuste les coords si nécessaire) -->
+  <!-- Remarques: on trace une courbe qui passe sous les lettres pour faire la 'wave' -->
+  <path class="wave" d="M 360 150
+                        C 390 170, 420 140, 450 160
+                        S 510 170, 540 150"
+        transform="translate(-10, -18)" />
+
+  <!-- Optionnel : petite ombre subtile (désactivable) -->
+  <ellipse cx="460" cy="190" rx="230" ry="14" fill="#000" opacity="0.05" />
+</svg>
