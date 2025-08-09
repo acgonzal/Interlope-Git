@@ -1,75 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interlope - Accueil</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interlope - Bijoux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: #fdfaf6;
+            color: #333;
+        }
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        header img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        header .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .collection {
+            padding: 60px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .collection img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+        .collection img:hover {
+            transform: scale(1.05);
+        }
+        .about {
+            position: relative;
+            background: url('images/ton-image-apropos.jpg') center/cover no-repeat;
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+        .about::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        .about-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta {
+            text-align: center;
+            padding: 40px;
+        }
+        .cta button {
+            background: linear-gradient(45deg, #d4af37, #f5deb3);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .cta button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        footer {
+            background: #f4f1ec;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>INTERLOPE</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
+    <header>
+        <img src="images/ton-image-hero.jpg" alt="Bijou Interlope">
+        <div class="overlay">
+            <h1>INTERLOPE</h1>
+            <p>Bijoux au charme rétro et intemporel</p>
+        </div>
+    </header>
 
-        <li class="dropdown">
-          <a href="produits.html">Produits</a>
-          <ul class="submenu">
-            <li><a href="produits.html#bracelets">Bracelets</a></li>
-            <li><a href="produits.html#colliers">Colliers</a></li>
-            <li><a href="produits.html#pendentifs">Pendentifs</a></li>
-            <li><a href="produits.html#boucles">Boucles d’oreilles</a></li>
-            <li class="dropdown-sub">
-              <a href="#">Pièces vintage</a>
-              <ul class="dropdown-sub-content">
-                <li><a href="produits.html#vintage-bracelet">Bracelet</a></li>
-                <li><a href="produits.html#vintage-boucle">Boucle</a></li>
-                <li><a href="produits.html#vintage-pendentif">Pendentif</a></li>
-                <li><a href="produits.html#vintage-bague">Bague</a></li>
-                <li><a href="produits.html#vintage-broche">Broche</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        <li><a href="manifeste.html">Manifeste</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Définition Interlope -->
-    <section class="definition visible">
-      <h2>Interlope</h2>
-      <p><em>adj.</em> <span class="genre">f. et m.</span></p>
-      <p><strong>Dont l’activité n’est pas légale.</strong><br>Ex. : Un réseau interlope.</p>
+    <section class="collection">
+        <img src="images/bijou1.jpg" alt="Bijou 1">
+        <img src="images/bijou2.jpg" alt="Bijou 2">
+        <img src="images/bijou3.jpg" alt="Bijou 3">
     </section>
 
-    <!-- Galerie générale -->
-    <section class="galerie">
-      <div class="bijou">
-        <img src="img/bijou1.jpg" alt="Bijou 1">
-        <p class="bulle">Un éclat de nuit.</p>
-      </div>
-
-      <div class="bijou">
-        <img src="img/bijou2.jpg" alt="Bijou 2">
-        <p class="bulle">Le trouble incarné.</p>
-      </div>
-      <!-- Ajoute d'autres bijoux ici -->
+    <section class="about">
+        <div class="about-content">
+            <h2>À propos d’Interlope</h2>
+            <p>Chaque pièce Interlope est pensée comme une œuvre, mariant l’élégance des années 70 à un savoir-faire contemporain. Nos bijoux racontent des histoires et illuminent ceux qui les portent.</p>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; Interlope - Tous droits réservés</p>
-  </footer>
+    <section class="cta">
+        <button>Découvrir la collection</button>
+    </section>
 
-
-  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DGvX7sUMsUo/?img_index=1" data-instgrm-version="14"></blockquote>
-  <script async src="//www.instagram.com/embed.js"></script>
-
+    <footer>
+        © 2025 Interlope - Tous droits réservés | Instagram | Facebook
+    </footer>
 </body>
-
 </html>
