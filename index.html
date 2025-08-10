@@ -35,7 +35,10 @@
       position:absolute;
       left:50%;
       top:0;
-      transform:translate(-50%, -50%); /* dépasse au-dessus du header */
+      .logo-plate {
+      top: 40px; /* descend le logo */
+      transform: translate(-50%, 0); /* on ne le remonte plus autant */}
+
       z-index:2;
     }
 
@@ -95,8 +98,9 @@
 
     /* Carrés entiers */
     .slide img{
-      width:100%;
-      aspect-ratio: 1 / 1;
+      width: 80%; /* ou 70% selon ton goût */
+      max-width: 300px; /* limite en pixels */
+      margin: auto;
       object-fit:contain;
       background:#fff;
       border:2px solid #ddd;
