@@ -8,43 +8,41 @@
     :root{
       --accent1:#ff5a00;
       --accent2:#ffb300;
-      --visible:3; /* valeur par défaut (JS mettra à jour selon la taille) */
+      --visible:3;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
       background:#f6fcfd;
       color:#111;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* HEADER */
+    /* HEADER CENTRÉ */
     header{
       background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      padding:40px 5%;
+      padding:30px 5%;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:space-between;
+      justify-content:center;
+      text-align:center;
     }
 
-    /* plaque blanche "rognée" du logo */
+    /* Logo plus grand */
     .logo-plate{
       background:#fff;
-      padding:18px 26px;
+      padding:20px 30px;
       border-radius:30px;
       display:inline-block;
       box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      overflow:hidden; /* rogne le logo si nécessaire */
-      max-height:140px;
+      overflow:hidden;
+      max-width:90%;
     }
     .logo{
       display:block;
-      height:110px; /* ajuste si ton logo est plus grand */
+      height:150px; /* agrandi */
       width:auto;
       object-fit:contain;
-      -webkit-user-drag: none;
-      user-select:none;
     }
 
     nav ul{
@@ -52,12 +50,12 @@
       display:flex;
       gap:28px;
       align-items:center;
+      margin-top:20px;
     }
     nav a{
       color:#111;
       text-decoration:none;
       font-weight:600;
-      letter-spacing:0.2px;
     }
     nav a:hover{ color:#fff; text-decoration:underline; }
 
@@ -71,30 +69,30 @@
     .carousel{
       position:relative;
       overflow:hidden;
-      border-radius:10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.95));
       padding:18px;
     }
 
-    /* piste flexible : on contrôle la taille d'une slide via --visible */
     .carousel-track{
       display:flex;
       gap:16px;
-      transition:transform .6s cubic-bezier(.2,.9,.3,1);
-      will-change: transform;
+      transition:transform .6s ease;
     }
     .slide{
       min-width: calc(100% / var(--visible));
       flex-shrink:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
+    /* Carrés visibles entiers */
     .slide img{
       width:100%;
-      height:340px;
-      object-fit:cover;
-      display:block;
+      aspect-ratio: 1 / 1; /* carré parfait */
+      object-fit:contain; /* pas rogné */
+      background:#fff;
+      border:2px solid #ddd;
       border-radius:10px;
-      box-shadow: 0 8px 20px rgba(10,10,10,0.08);
-      background:linear-gradient(180deg,#f3f6f7,#eef7f7);
+      padding:5px;
     }
 
     /* boutons */
@@ -114,18 +112,14 @@
       justify-content:center;
       font-size:20px;
     }
-    .carousel-button:active{ transform: translateY(-50%) scale(.98); }
     .carousel-button.prev{ left:12px; }
     .carousel-button.next{ right:12px; }
 
-    /* section à propos + footer */
     .apropos{
       margin-top:28px;
       padding:28px;
       text-align:center;
-      background:transparent;
     }
-    .apropos h2{ margin-bottom:14px; font-size:1.3rem; }
     footer{
       text-align:center;
       padding:28px 10px;
@@ -133,15 +127,11 @@
       font-size:0.95rem;
     }
 
-    /* responsive tweaks */
     @media (max-width:900px){
-      .logo{ height:86px }
-      .slide img{ height:300px }
+      .logo{ height:120px }
     }
     @media (max-width:700px){
-      header{ padding:20px 4% }
-      .logo{ height:72px }
-      .slide img{ height:220px }
+      .logo{ height:100px }
     }
   </style>
 </head>
@@ -149,10 +139,8 @@
 
   <header>
     <div class="logo-plate">
-      <!-- nom du fichier : logo.png (à placer dans la racine du repo) -->
       <img src="logo.png" alt="Interlope" class="logo">
     </div>
-
     <nav aria-label="Navigation principale">
       <ul>
         <li><a href="#produits">Produits</a></li>
@@ -163,19 +151,16 @@
   </header>
 
   <main class="wrap" id="produits">
-    <section class="carousel" aria-label="Carrousel de produits">
+    <section class="carousel">
       <div class="carousel-track" id="track">
-        <!-- remplace les src par tes images (image1.png, image2.png, ...) -->
         <div class="slide"><img src="image1.png" alt="Bijou 1"></div>
         <div class="slide"><img src="image2.png" alt="Bijou 2"></div>
         <div class="slide"><img src="image3.png" alt="Bijou 3"></div>
         <div class="slide"><img src="image4.png" alt="Bijou 4"></div>
         <div class="slide"><img src="image5.png" alt="Bijou 5"></div>
-        <div class="slide"><img src="image6.png" alt="Bijou 6"></div>
       </div>
-
-      <button class="carousel-button prev" id="prev" aria-label="Précédent">❮</button>
-      <button class="carousel-button next" id="next" aria-label="Suivant">❯</button>
+      <button class="carousel-button prev" id="prev">❮</button>
+      <button class="carousel-button next" id="next">❯</button>
     </section>
 
     <section id="apropos" class="apropos">
@@ -187,24 +172,22 @@
   <footer id="contact">© 2025 Interlope — Instagram | Facebook</footer>
 
   <script>
-    /* Carrousel responsive multi-items (1/2/3 visible), autoplay + flèches + pause au survol */
     document.addEventListener('DOMContentLoaded', function(){
       const track = document.getElementById('track');
       const slides = Array.from(track.children);
       const prevBtn = document.getElementById('prev');
       const nextBtn = document.getElementById('next');
-      const carousel = track.parentElement;
 
       let visible = computeVisible();
       let index = 0;
       let timer = null;
+
       setVisible(visible);
       update();
 
       window.addEventListener('resize', () => {
         const v = computeVisible();
         if (v !== visible){
-          // recalculer l'affichage (on s'assure que index reste cohérent)
           visible = v;
           setVisible(visible);
           if (index > slides.length - visible) index = Math.max(0, slides.length - visible);
@@ -224,9 +207,6 @@
         restartTimer();
       });
 
-      carousel.addEventListener('mouseenter', () => stopTimer());
-      carousel.addEventListener('mouseleave', () => startTimer());
-
       function computeVisible(){
         if (window.innerWidth >= 1000) return 3;
         if (window.innerWidth >= 700) return 2;
@@ -244,18 +224,14 @@
         if (index > slides.length - visible) index = 0;
         update();
       }
-
       function startTimer(){
         stopTimer();
         timer = setInterval(goNext, 4000);
       }
       function stopTimer(){ if (timer) { clearInterval(timer); timer = null; } }
       function restartTimer(){ stopTimer(); startTimer(); }
-
-      // démarrer l'autoplay
       startTimer();
     });
   </script>
 </body>
 </html>
-
