@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Interlope — Demo</title>
+  <title>Interlope</title>
   <style>
     :root{
       --accent1:#ff5a00;
@@ -17,52 +17,59 @@
       color:#111;
     }
 
-    /* HEADER CENTRÉ */
+    /* HEADER avec logo flottant */
     header{
+      position:relative;
       background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      padding:30px 5%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      padding:100px 5% 60px; /* plus d'espace en haut */
       text-align:center;
     }
 
-    /* Logo plus grand */
     .logo-plate{
       background:#fff;
-      padding:20px 30px;
-      border-radius:30px;
+      padding:25px 40px;
+      border-radius:40px;
       display:inline-block;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
       overflow:hidden;
-      max-width:90%;
+      position:absolute;
+      left:50%;
+      top:0;
+      transform:translate(-50%, -50%); /* dépasse au-dessus du header */
+      z-index:2;
     }
+
     .logo{
       display:block;
-      height:150px; /* agrandi */
+      height:200px; /* encore plus grand */
       width:auto;
       object-fit:contain;
+    }
+
+    nav{
+      margin-top:120px; /* espace pour le logo qui flotte */
     }
 
     nav ul{
       list-style:none;
       display:flex;
-      gap:28px;
-      align-items:center;
-      margin-top:20px;
+      gap:30px;
+      justify-content:center;
     }
+
     nav a{
       color:#111;
       text-decoration:none;
       font-weight:600;
+      font-size:1.1rem;
     }
+
     nav a:hover{ color:#fff; text-decoration:underline; }
 
     /* SECTION CARROUSEL */
     .wrap{
       max-width:1200px;
-      margin:32px auto;
+      margin:60px auto;
       padding: 0 20px 60px;
     }
 
@@ -77,6 +84,7 @@
       gap:16px;
       transition:transform .6s ease;
     }
+
     .slide{
       min-width: calc(100% / var(--visible));
       flex-shrink:0;
@@ -84,14 +92,15 @@
       justify-content:center;
       align-items:center;
     }
-    /* Carrés visibles entiers */
+
+    /* Carrés entiers */
     .slide img{
       width:100%;
-      aspect-ratio: 1 / 1; /* carré parfait */
-      object-fit:contain; /* pas rogné */
+      aspect-ratio: 1 / 1;
+      object-fit:contain;
       background:#fff;
       border:2px solid #ddd;
-      border-radius:10px;
+      border-radius:12px;
       padding:5px;
     }
 
@@ -120,6 +129,7 @@
       padding:28px;
       text-align:center;
     }
+
     footer{
       text-align:center;
       padding:28px 10px;
@@ -128,10 +138,12 @@
     }
 
     @media (max-width:900px){
-      .logo{ height:120px }
+      .logo{ height:150px }
+      nav{ margin-top:90px; }
     }
     @media (max-width:700px){
-      .logo{ height:100px }
+      .logo{ height:120px }
+      nav{ margin-top:70px; }
     }
   </style>
 </head>
